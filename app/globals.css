@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #171717;
+  --background-light: #fafbfc;
+  --background-dark: #f1f1f1;
+  --border-color: #d3d9de;
+}
+
+body {
+  color: var(--foreground);
+  background: none;
+  font-family: 'Roboto', sans-serif; 
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.main-block {
+  border-radius: 4px;
+  width: 437px;
+  height: 340px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0; /* Removed centering */
+}
+
+/* Input Styles */
+.input-div {
+  border: 1px solid #dce1e5;
+  border-radius: 0 0 4px 4px;
+  padding: 13px 16px;
+  width: 100%;
+  height: 62px;
+  position: relative;
+  background: var(--background-light);
+}
+
+.input-block {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  width: 100%;
+  height: 36px;
+  background: #fff;
+}
+
+/* Chat Styles */
+.chat {
+  overflow-y: auto;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.text-message {
+  background-color: var(--background-dark); 
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 70%;
+  margin-left: 10px;
+}
+
+.gif-message {
+  margin-left: 10px;
+}
+
+.gif-message img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.message-time {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 0.8em; 
+  color: #99a2ad;
+  align-self: flex-end;
+}
+
+/* GIF Window Styles */
+.gif-window {
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  width: 404px;
+  height: 248px;
+  background-color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.gif-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gif-item {
+  height: 118px;
+  object-fit: cover;
+  cursor: pointer; 
+}
+
+.gif-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 
+              0 13px 8px 0 rgba(0, 0, 0, 0.12), 
+              0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Input Preview */
+.input-preview {
+  position: absolute;
+  top: 19px; 
+  left: 29px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+/* Highlight */
+.highlight {
+  background: linear-gradient(135deg, #2EE6A8 0%, #3399FF 34.37%, #9933FF 69.27%, #FF3399 100%);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+/* Scrolling Styles */
+.scrolling {
+  padding: 4px 8px; 
+  width: 100%;
+  height: 232px;
+  background-color: white;
+  position: absolute;
+  overflow-y: auto;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 1000;
+}
+
+.scrolling::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrolling::-webkit-scrollbar-thumb {
+  background: #dae2ea;
+  border-radius: 10px;
+}
+
+/* Font Face */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
